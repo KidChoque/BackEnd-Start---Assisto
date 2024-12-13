@@ -11,13 +11,13 @@ export class TaskController {
     }
 
     @Post()
-    create(@Body() task: TaskDto) {
+    createTask(@Body() task: TaskDto) {
         this.taskService.create(task);
 
     }
 
     @Get()
-    read() {
+    readTask() {
         return this.taskService.getTasks();
     }
 
@@ -57,7 +57,7 @@ export class TaskController {
     }
 
     @Patch(':id')
-    updateStatus(@Param('id', ParseIntPipe)id:number,@Body() UpdatedStatus: string){
+    updateTaskStatus(@Param('id', ParseIntPipe)id:number,@Body() UpdatedStatus: string){
 
         return this.taskService.updateStatus(id,UpdatedStatus)
     }

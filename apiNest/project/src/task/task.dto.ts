@@ -28,6 +28,6 @@ export class TaskDto {
   @IsDate()
   dateCreation: Date = new Date();
 
-  @IsDate()
+  @IsDate() 
   dateUpdate: Date = new Date();
 }

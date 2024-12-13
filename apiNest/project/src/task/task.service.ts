@@ -1,4 +1,4 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { TaskDto } from './task.dto';
 import { ok } from 'assert';
 
@@ -65,6 +65,7 @@ export class TaskService {
   updateTask(id: number, updatedTask: TaskDto): TaskDto {
     const task = this.tasks.findIndex(task => task.id === id);
     const existingTask = this.tasks[task];
+    updatedTask.id = existingTask.id;
     updatedTask.dateCreation = existingTask.dateCreation;
     updatedTask.dateUpdate = new Date();
 
